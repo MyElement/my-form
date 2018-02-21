@@ -1,0 +1,29 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../my-style/my-style.html">
+<dom-module id="my-input-style">
+    <template>
+        <style include="my-style">
+             input,label{
+                font-family: CSChatThaiUI;
+                font-size: 1rem;
+                margin: 0.4rem;
+            }
+            input {
+                display: block;
+                width: 100%;
+                padding: 6px 12px;
+                font-size: 1rem;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                background-image: none;
+                line-height: 1.42857143;
+                border-radius: 4px;
+            }
+
+            input:focus {
+                outline: none;
+                border-color: #66AFE9;
+            }
+        </style>
+    </template>
+</dom-module>

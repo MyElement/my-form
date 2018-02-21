@@ -1,0 +1,46 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="./my-input-style.html">
+<dom-module id="my-input">
+    <template>
+        <style include="my-input-style"></style>
+        <template is="dom-if" if="[[!noLabelFloat]]">
+            <label for="input">[[label]]</label>
+        </template>
+        <input type="[[type]]" id="input" placeholder="[[placeholder]]" value="{{value::input}}">
+    </template>
+
+    <script>
+        /**
+         * `my-input` Description
+         *
+         * @summary ShortDescription.
+         * @customElement
+         * @polymer
+         * @extends {Polymer.Element}
+         */
+        class MyInput extends Polymer.Element {
+
+            static get is() {
+                return 'my-input';
+            }
+
+            static get properties() {
+                return {
+                    type: {
+                        type: String,
+                        value: 'text'
+                    },
+                    value: String,
+                    placeholder:String,
+                    label:String,
+                    noLabelFloat:{
+                        type:Boolean,
+                        value:false
+                    }
+                };
+            }
+        }
+
+        window.customElements.define(MyInput.is, MyInput);
+    </script>
+</dom-module>

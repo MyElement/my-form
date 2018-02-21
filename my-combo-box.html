@@ -1,0 +1,68 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="./my-input.html">
+<link rel="import" href="../vaadin-combo-box/vaadin-combo-box-light.html">
+<link rel="import" href="../iron-input/iron-input.html">
+<dom-module id="my-combo-box">
+    <template>
+        <style include="my-input-style">
+            vaadin-combo-box-light{
+                width: 100%;
+            }
+        </style>
+        <vaadin-combo-box-light items="[[items]]" item-label-path="[[itemLabelPath]]" item-value-path="[[itemValuePath]]" value="{{value}}"
+            attr-for-value="bind-value">
+            <iron-input>
+                <slot></slot>
+            </iron-input>
+        </vaadin-combo-box-light>
+    </template>
+
+    <script>
+        /**
+         * `my-combo-box` Description
+         *
+         * @summary ShortDescription.
+         * @customElement
+         * @polymer
+         * @extends {Polymer.Element}
+         */
+        class MyComboBox extends Polymer.Element {
+            /**
+             * String providing the tag name to register the element under.
+             */
+            static get is() {
+                return 'my-combo-box';
+            }
+
+            /**
+             * Object describing property-related metadata used by Polymer features
+             */
+            static get properties() {
+                return {
+                    items: {
+                        type: Array,
+                        value: [{
+                            label: 'test',
+                            value: '01'
+                        }]
+                    },
+                    className: {
+                        type: String
+                    },
+                    itemLabelPath: {
+                        type: String
+                    },
+                    itemValuePath: {
+                        type: String
+                    },
+                    value: {
+                        type: String,
+                        notify: true
+                    }
+                };
+            }
+        }
+
+        window.customElements.define(MyComboBox.is, MyComboBox);
+    </script>
+</dom-module>

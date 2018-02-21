@@ -10,7 +10,8 @@
 
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../my-form.html">
+    <link rel="import" href="../my-input.html">
+    <link rel="import" href="../my-combo-box.html">
 
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
@@ -19,10 +20,27 @@
   </head>
   <body>
     <div class="vertical-section-container centered">
-      <h3>Basic my-form demo</h3>
+      <h3>Basic my-input demo</h3>
       <demo-snippet>
         <template>
-          <my-form></my-form>
+          <my-input label="Username" type="text" placeholder="กรุณากรอก Username"></my-input>
+          <my-input label="Password" type="password" value="ทดสอบ"></my-input>
+          <my-input label="วันที่" type="date"></my-input>
+          <my-input label="เวลา" type="time"></my-input>
+        </template>
+      </demo-snippet>
+      <h3>my-input no-label-float demo</h3>
+      <demo-snippet>
+        <template>
+          <my-input type="text" no-label-float></my-input>
+        </template>
+      </demo-snippet>
+      <h3>my-combobox demo</h3>
+      <demo-snippet>
+        <template>
+          <my-combo-box>
+            <my-input label="ทดสอบ" type="text" placeholder="ทดสอบ"></my-input>
+          </my-combo-box>
         </template>
       </demo-snippet>
     </div>
