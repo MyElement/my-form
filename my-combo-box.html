@@ -5,7 +5,7 @@
 <dom-module id="my-combo-box">
     <template>
         <style include="my-input-style">
-            vaadin-combo-box-light{
+            iron-input{
                 width: 100%;
             }
         </style>
@@ -27,24 +27,16 @@
          * @extends {Polymer.Element}
          */
         class MyComboBox extends Polymer.Element {
-            /**
-             * String providing the tag name to register the element under.
-             */
+           
             static get is() {
                 return 'my-combo-box';
             }
 
-            /**
-             * Object describing property-related metadata used by Polymer features
-             */
             static get properties() {
                 return {
                     items: {
                         type: Array,
-                        value: [{
-                            label: 'test',
-                            value: '01'
-                        }]
+                        value: []
                     },
                     className: {
                         type: String
