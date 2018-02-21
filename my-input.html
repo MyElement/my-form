@@ -5,6 +5,7 @@
         <style include="my-input-style"></style>
         <template is="dom-if" if="[[!noLabelFloat]]">
             <label for="input">[[label]]</label>
+            <br>
         </template>
         <input type="[[type]]" id="input" placeholder="[[placeholder]]" value="{{value::input}}">
     </template>
