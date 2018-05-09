@@ -9,7 +9,7 @@
                 width: 100%;
             }
         </style>
-        <vaadin-combo-box-light items="[[items]]" item-label-path="[[itemLabelPath]]" item-value-path="[[itemValuePath]]" value="{{value}}"
+        <vaadin-combo-box-light id="selectBox" items="[[items]]" item-label-path="[[itemLabelPath]]" item-value-path="[[itemValuePath]]" value="{{value}}"
             attr-for-value="bind-value">
             <iron-input>
                 <slot></slot>
@@ -36,7 +36,8 @@
                 return {
                     items: {
                         type: Array,
-                        value: []
+                        value: [],
+                        observer:'changeItem'
                     },
                     className: {
                         type: String
@@ -49,9 +50,19 @@
                     },
                     value: {
                         type: String,
+                        value:"",
                         notify: true
                     }
                 };
+            }
+            ready(){
+                super.ready()
+                this.element = this.$.selectBox
+            }
+            changeItem(val){
+                if(val.length && this.value){
+                   this.element.value = this.value
+                }
             }
         }
 
